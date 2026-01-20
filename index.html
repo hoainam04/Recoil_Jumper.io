@@ -63,7 +63,10 @@
             justify-content: center;
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+                url('images/hero.jpg') center / cover no-repeat;
+            background-attachment: fixed; /* PARALLAX */
         }
 
         .hero { max-width: 900px; }
@@ -74,6 +77,24 @@
             letter-spacing: 2px;
             margin-bottom: 20px;
             color: var(--primary);
+            text-shadow:
+                0 4px 0 #000,
+                0 8px 20px rgba(255,59,59,0.6);
+            animation: logoPop 1.2s ease-out forwards;
+        }
+
+        @keyframes logoPop {
+            0% {
+                transform: scale(0.85) translateY(20px);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.05) translateY(-4px);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
         }
 
         .hero p {
@@ -195,6 +216,7 @@
 
 <header>
     <div class="hero">
+        <img src="images/hero.jpg" alt="Recoil Jumper key art" style="display:none;">
         <h1 data-i18n="title">RECOIL JUMPER</h1>
         <p data-i18n="subtitle">
             Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển.
@@ -380,6 +402,13 @@ if (media) {
         media.scrollLeft = scrollLeft - walk;
     });
 }
+// ===== HERO PARALLAX (SMOOTH & LIGHTWEIGHT) =====
+const hero = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    hero.style.backgroundPosition = `center ${scrollY * 0.3}px`;
+});
+
 </script>
 </body>
 </html>
