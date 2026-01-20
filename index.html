@@ -22,11 +22,7 @@
             --muted: #9aa0b3;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -69,7 +65,73 @@
             padding: 40px 20px;
             background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
         }
-        /* (phần CSS còn lại giữ nguyên) */
+
+        .hero { max-width: 900px; }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        .actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn.primary { background: var(--primary); color: #fff; }
+        .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,59,59,.4); }
+
+        .btn.secondary { border: 2px solid var(--secondary); color: var(--secondary); }
+        .btn.secondary:hover { background: var(--secondary); color: #000; }
+
+        section { padding: 80px 20px; }
+
+        .container { max-width: 1100px; margin: auto; }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: var(--panel);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .feature h3 { margin-bottom: 12px; color: var(--secondary); }
+        .feature p { color: var(--muted); font-size: 15px; }
+
+        footer {
+            background: #0b0d12;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -94,23 +156,23 @@
 
 <section id="features">
     <div class="container">
-        <h2 class="section-title">TÍNH NĂNG</h2>
+        <h2 class="section-title" data-i18n="features_title">TÍNH NĂNG</h2>
         <div class="features">
             <div class="feature">
-                <h3>🔫 Di chuyển bằng Recoil</h3>
-                <p>Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.</p>
+                <h3 data-i18n="f1_title">🔫 Di chuyển bằng Recoil</h3>
+                <p data-i18n="f1_desc">Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.</p>
             </div>
             <div class="feature">
-                <h3>⚡ Gameplay Hardcore</h3>
-                <p>Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.</p>
+                <h3 data-i18n="f2_title">⚡ Gameplay Hardcore</h3>
+                <p data-i18n="f2_desc">Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.</p>
             </div>
             <div class="feature">
-                <h3>🗺️ Map dọc phức tạp</h3>
-                <p>Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.</p>
+                <h3 data-i18n="f3_title">🗺️ Map dọc phức tạp</h3>
+                <p data-i18n="f3_desc">Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.</p>
             </div>
             <div class="feature">
-                <h3>🎮 Điều khiển tối giản</h3>
-                <p>Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.</p>
+                <h3 data-i18n="f4_title">🎮 Điều khiển tối giản</h3>
+                <p data-i18n="f4_desc">Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.</p>
             </div>
         </div>
     </div>
@@ -118,11 +180,11 @@
 
 <section>
     <div class="container">
-        <h2 class="section-title">HÌNH ẢNH & VIDEO</h2>
+        <h2 class="section-title" data-i18n="media_title">HÌNH ẢNH & VIDEO</h2>
         <div class="media">
-            <div class="placeholder">Screenshot 1</div>
-            <div class="placeholder">Screenshot 2</div>
-            <div class="placeholder">Gameplay Video</div>
+            <div class="placeholder" data-i18n="media_shot1">Screenshot 1</div>
+            <div class="placeholder" data-i18n="media_shot2">Screenshot 2</div>
+            <div class="placeholder" data-i18n="media_video">Gameplay Video</div>
         </div>
     </div>
 </section>
@@ -137,13 +199,39 @@ const translations = {
         title: "RECOIL JUMPER",
         subtitle: "Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển. Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.",
         download: "Tải Game trên Google Play",
-        features_btn: "Xem Tính Năng"
+        features_btn: "Xem Tính Năng",
+        features_title: "TÍNH NĂNG",
+        f1_title: "🔫 Di chuyển bằng Recoil",
+        f1_desc: "Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.",
+        f2_title: "⚡ Gameplay Hardcore",
+        f2_desc: "Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.",
+        f3_title: "🗺️ Map dọc phức tạp",
+        f3_desc: "Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.",
+        f4_title: "🎮 Điều khiển tối giản",
+        f4_desc: "Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.",
+        media_title: "HÌNH ẢNH & VIDEO",
+        media_shot1: "Ảnh chụp màn hình 1",
+        media_shot2: "Ảnh chụp màn hình 2",
+        media_video: "Video gameplay"
     },
     en: {
         title: "RECOIL JUMPER",
         subtitle: "An action platformer where <b>weapon recoil</b> is how you move. Shoot – jump – die – retry. Pure hardcore gameplay.",
         download: "Download on Google Play",
-        features_btn: "View Features"
+        features_btn: "View Features",
+        features_title: "FEATURES",
+        f1_title: "🔫 Movement by Recoil",
+        f1_desc: "Shoot to jump, shoot to survive. Every bullet directly affects your position.",
+        f2_title: "⚡ Hardcore Gameplay",
+        f2_desc: "No mercy. One wrong move and you fall back to the bottom.",
+        f3_title: "🗺️ Vertical Level Design",
+        f3_desc: "Jump King–style vertical maps that create constant pressure.",
+        f4_title: "🎮 Minimal Controls",
+        f4_desc: "Easy to learn, hard to master. Everything is about timing and angle.",
+        media_title: "IMAGES & VIDEO",
+        media_shot1: "Screenshot 1",
+        media_shot2: "Screenshot 2",
+        media_video: "Gameplay Video"
     }
 };
 
