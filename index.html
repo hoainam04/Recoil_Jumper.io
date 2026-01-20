@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recoil Jumper</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Recoil Jumper - Game platformer hành động sử dụng lực giật để nhảy. Hardcore, nhanh, gây nghiện." />
+    <meta name="keywords" content="Recoil Jumper, platformer, recoil, indie game, mobile game" />
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f1115;
+            --panel: #181b22;
+            --primary: #ff3b3b;
+            --secondary: #4dd0ff;
+            --text: #eaeaf0;
+            --muted: #9aa0b3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: radial-gradient(circle at top, #1a1e2a, var(--bg));
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+        }
+
+        .hero {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        .hero .actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn.primary {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 59, 59, 0.4);
+        }
+
+        .btn.secondary {
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn.secondary:hover {
+            background: var(--secondary);
+            color: #000;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 50px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            background: var(--panel);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .feature h3 {
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .feature p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .media .placeholder {
+            background: linear-gradient(135deg, #222636, #151824);
+            border-radius: 14px;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0b0d12;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 44px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="hero">
+        <h1>RECOIL JUMPER</h1>
+        <p>
+            Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển.
+            Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.
+        </p>
+        <div class="actions">
+            <a href="#" class="btn primary">Tải Game</a>
+            <a href="#features" class="btn secondary">Xem Tính Năng</a>
+        </div>
+    </div>
+</header>
+
+<section id="features">
+    <div class="container">
+        <h2 class="section-title">TÍNH NĂNG</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>🔫 Di chuyển bằng Recoil</h3>
+                <p>Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Gameplay Hardcore</h3>
+                <p>Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.</p>
+            </div>
+            <div class="feature">
+                <h3>🗺️ Map dọc phức tạp</h3>
+                <p>Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.</p>
+            </div>
+            <div class="feature">
+                <h3>🎮 Điều khiển tối giản</h3>
+                <p>Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2 class="section-title">HÌNH ẢNH & VIDEO</h2>
+        <div class="media">
+            <div class="placeholder">Screenshot 1</div>
+            <div class="placeholder">Screenshot 2</div>
+            <div class="placeholder">Gameplay Video</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <span>Recoil Jumper</span>. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
