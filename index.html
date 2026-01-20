@@ -150,6 +150,9 @@
             border-radius: 14px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             background: #000;
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none; /* cho phép kéo trực tiếp trên ảnh để scroll */
         }
 
         footer {
@@ -316,6 +319,38 @@ setLanguage(savedLang);
 document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
 });
+// ===== DRAG TO SCROLL (DESKTOP LIKE GOOGLE PLAY) =====
+const media = document.querySelector('.media');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+if (media) {
+    media.addEventListener('mousedown', (e) => {
+        isDown = true;
+        media.classList.add('dragging');
+        startX = e.pageX - media.offsetLeft;
+        scrollLeft = media.scrollLeft;
+    });
+
+    media.addEventListener('mouseleave', () => {
+        isDown = false;
+        media.classList.remove('dragging');
+    });
+
+    media.addEventListener('mouseup', () => {
+        isDown = false;
+        media.classList.remove('dragging');
+    });
+
+    media.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - media.offsetLeft;
+        const walk = (x - startX) * 1.5; // tốc độ kéo
+        media.scrollLeft = scrollLeft - walk;
+    });
+}
 </script>
 </body>
 </html>
