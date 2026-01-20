@@ -22,11 +22,7 @@
             --muted: #9aa0b3;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -44,21 +40,21 @@
             gap: 6px;
         }
 
-            .lang-switch button {
-                padding: 6px 12px;
-                border-radius: 8px;
-                border: 1px solid var(--secondary);
-                background: transparent;
-                color: var(--secondary);
-                font-weight: 600;
-                cursor: pointer;
-            }
+        .lang-switch button {
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--secondary);
+            background: transparent;
+            color: var(--secondary);
+            font-weight: 600;
+            cursor: pointer;
+        }
 
-                .lang-switch button.active,
-                .lang-switch button:hover {
-                    background: var(--secondary);
-                    color: #000;
-                }
+        .lang-switch button.active,
+        .lang-switch button:hover {
+            background: var(--secondary);
+            color: #000;
+        }
 
         header {
             min-height: 100vh;
@@ -70,30 +66,23 @@
             background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
         }
 
-        .hero {
-            max-width: 900px;
+        .hero { max-width: 900px; }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
 
-            .hero h1 {
-                font-size: 64px;
-                font-weight: 800;
-                letter-spacing: 2px;
-                margin-bottom: 20px;
-                color: var(--primary);
-            }
-
-            .hero p {
-                font-size: 18px;
-                color: var(--muted);
-                margin-bottom: 40px;
-            }
-
-        .actions {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            margin-bottom: 40px;
         }
+
+        .actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
         .btn {
             padding: 14px 28px;
@@ -103,34 +92,15 @@
             transition: all 0.25s ease;
         }
 
-            .btn.primary {
-                background: var(--primary);
-                color: #fff;
-            }
+        .btn.primary { background: var(--primary); color: #fff; }
+        .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,59,59,.4); }
 
-                .btn.primary:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 30px rgba(255,59,59,.4);
-                }
+        .btn.secondary { border: 2px solid var(--secondary); color: var(--secondary); }
+        .btn.secondary:hover { background: var(--secondary); color: #000; }
 
-            .btn.secondary {
-                border: 2px solid var(--secondary);
-                color: var(--secondary);
-            }
+        section { padding: 80px 20px; }
 
-                .btn.secondary:hover {
-                    background: var(--secondary);
-                    color: #000;
-                }
-
-        section {
-            padding: 80px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
+        .container { max-width: 1100px; margin: auto; }
 
         .section-title {
             text-align: center;
@@ -152,15 +122,8 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-            .feature h3 {
-                margin-bottom: 12px;
-                color: var(--secondary);
-            }
-
-            .feature p {
-                color: var(--muted);
-                font-size: 15px;
-            }
+        .feature h3 { margin-bottom: 12px; color: var(--secondary); }
+        .feature p { color: var(--muted); font-size: 15px; }
 
         .media {
             display: flex;
@@ -171,18 +134,31 @@
             padding-bottom: 10px;
         }
 
-            .media::-webkit-scrollbar {
-                height: 8px;
-            }
-
-            .media::-webkit-scrollbar-thumb {
-                background: var(--panel);
-                border-radius: 4px;
-            }
+        .media::-webkit-scrollbar { height: 8px; }
+        .media::-webkit-scrollbar-thumb {
+            background: var(--panel);
+            border-radius: 4px;
+        }
 
         .media-item {
             flex: 0 0 260px;
             scroll-snap-align: center;
+        }
+
+        /* ===== FEATURE VIDEO ===== */
+        .feature-video {
+            max-width: 960px;
+            margin: 0 auto 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        .feature-video video {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #000;
         }
 
         .media img {
@@ -212,195 +188,198 @@
     </style>
 </head>
 <body>
-    <div class="lang-switch">
-        <button data-lang="vi" class="active">VI</button>
-        <button data-lang="en">EN</button>
+<div class="lang-switch">
+    <button data-lang="vi" class="active">VI</button>
+    <button data-lang="en">EN</button>
+</div>
+
+<header>
+    <div class="hero">
+        <h1 data-i18n="title">RECOIL JUMPER</h1>
+        <p data-i18n="subtitle">
+            Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển.
+            Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.
+        </p>
+        <div class="actions">
+            <a href="https://play.google.com/store/apps/details?id=com.namo04.recoiljumper" class="btn primary" target="_blank" rel="noopener" data-i18n="download">Tải Game trên Google Play</a>
+            <a href="#features" class="btn secondary" data-i18n="features_btn">Xem Tính Năng</a>
+        </div>
     </div>
+</header>
 
-    <header>
-        <div class="hero">
-            <h1 data-i18n="title">RECOIL JUMPER</h1>
-            <p data-i18n="subtitle">
-                Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển.
-                Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.
-            </p>
-            <div class="actions">
-                <a href="https://play.google.com/store/apps/details?id=com.namo04.recoiljumper" class="btn primary" target="_blank" rel="noopener" data-i18n="download">Tải Game trên Google Play</a>
-                <a href="#features" class="btn secondary" data-i18n="features_btn">Xem Tính Năng</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="features">
-        <div class="container">
-            <h2 class="section-title" data-i18n="features_title">TÍNH NĂNG</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3 data-i18n="f1_title">🔫 Di chuyển bằng Recoil</h3>
-                    <p data-i18n="f1_desc">Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.</p>
-                </div>
-                <div class="feature">
-                    <h3 data-i18n="f2_title">⚡ Gameplay Hardcore</h3>
-                    <p data-i18n="f2_desc">Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.</p>
-                </div>
-                <div class="feature">
-                    <h3 data-i18n="f3_title">🗺️ Map dọc phức tạp</h3>
-                    <p data-i18n="f3_desc">Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.</p>
-                </div>
-                <div class="feature">
-                    <h3 data-i18n="f4_title">🎮 Điều khiển tối giản</h3>
-                    <p data-i18n="f4_desc">Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <h2 class="section-title" data-i18n="media_title">HÌNH ẢNH & VIDEO</h2>
-            <div class="media">
-                <div class="media-item">
-                    <video src="screenshots/gameplay.mp4" controls muted playsinline preload="metadata"></video>
-                </div>
-                <div class="media-item"><img src="screenshots/screen1.png" alt="Recoil Jumper screenshot 1"></div>
-                <div class="media-item"><img src="screenshots/screen2.png" alt="Recoil Jumper screenshot 2"></div>
-                <div class="media-item"><img src="screenshots/screen3.png" alt="Recoil Jumper screenshot 3"></div>
-                <div class="media-item"><img src="screenshots/screen4.png" alt="Recoil Jumper screenshot 4"></div>
-                <div class="media-item"><img src="screenshots/screen5.png" alt="Recoil Jumper screenshot 5"></div>
-                <div class="media-item"><img src="screenshots/screen6.png" alt="Recoil Jumper screenshot 6"></div>
-                <div class="media-item"><img src="screenshots/screen7.png" alt="Recoil Jumper screenshot 7"></div>
-            </div>
-
-
-        </div>
-        </div>
-    </section>
-
-    <section id="legal">
-        <div class="container">
-            <h2 class="section-title" data-i18n="legal_title">CHÍNH SÁCH & ĐIỀU KHOẢN</h2>
-
+<section id="features">
+    <div class="container">
+        <h2 class="section-title" data-i18n="features_title">TÍNH NĂNG</h2>
+        <div class="features">
             <div class="feature">
-                <h3 data-i18n="privacy_title">Privacy Policy</h3>
-                <p data-i18n="privacy_content"></p>
+                <h3 data-i18n="f1_title">🔫 Di chuyển bằng Recoil</h3>
+                <p data-i18n="f1_desc">Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.</p>
             </div>
-
-            <div class="feature" style="margin-top:30px;">
-                <h3 data-i18n="tos_title">Terms of Service</h3>
-                <p data-i18n="tos_content"></p>
+            <div class="feature">
+                <h3 data-i18n="f2_title">⚡ Gameplay Hardcore</h3>
+                <p data-i18n="f2_desc">Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.</p>
+            </div>
+            <div class="feature">
+                <h3 data-i18n="f3_title">🗺️ Map dọc phức tạp</h3>
+                <p data-i18n="f3_desc">Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.</p>
+            </div>
+            <div class="feature">
+                <h3 data-i18n="f4_title">🎮 Điều khiển tối giản</h3>
+                <p data-i18n="f4_desc">Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2026 <span>Recoil Jumper</span>. All rights reserved.</p>
-    </footer>
+<section>
+    <div class="container">
+        <h2 class="section-title" data-i18n="media_title">HÌNH ẢNH & VIDEO</h2>
 
-    <script>
-        const translations = {
-            vi: {
-                title: "RECOIL JUMPER",
-                subtitle: "Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển. Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.",
-                download: "Tải Game trên Google Play",
-                features_btn: "Xem Tính Năng",
-                features_title: "TÍNH NĂNG",
-                f1_title: "🔫 Di chuyển bằng Recoil",
-                f1_desc: "Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.",
-                f2_title: "⚡ Gameplay Hardcore",
-                f2_desc: "Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.",
-                f3_title: "🗺️ Map dọc phức tạp",
-                f3_desc: "Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.",
-                f4_title: "🎮 Điều khiển tối giản",
-                f4_desc: "Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.",
-                media_title: "HÌNH ẢNH & VIDEO",
-                media_shot1: "Ảnh chụp màn hình 1",
-                media_shot2: "Ảnh chụp màn hình 2",
-                media_video: "Video gameplay",
-                legal_title: "CHÍNH SÁCH & ĐIỀU KHOẢN",
-                privacy_title: "Chính sách quyền riêng tư",
-                privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Thông tin thu thập:</b><br>- Thông tin thiết bị (model, OS, Advertising ID)<br>- Dữ liệu chơi game (hành vi, tiến trình, cài đặt)<br>- Dữ liệu từ Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Mục đích sử dụng:</b><br>- Tối ưu hiệu năng<br>- Hiển thị quảng cáo<br>- Lưu tiến trình chơi<br><br><b>Quyền người dùng:</b><br>- Xóa dữ liệu chơi game<br>- Xem dữ liệu đã lưu<br><br>Chính sách có thể thay đổi theo các bản cập nhật.",
-                tos_title: "Điều khoản dịch vụ",
-                tos_content: "Khi chơi Recoil Jumper, bạn đồng ý với các điều khoản sau:<br><br>- Mọi tài sản và nội dung thuộc quyền sở hữu của Namo<br>- Không hack, cheat hoặc khai thác lỗi<br>- Game có hiển thị quảng cáo qua Google AdMob<br>- Chúng tôi không chịu trách nhiệm cho mất dữ liệu do thiết bị hoặc mạng không ổn định"
-            },
-            en: {
-                title: "RECOIL JUMPER",
-                subtitle: "An action platformer where <b>weapon recoil</b> is how you move. Shoot – jump – die – retry. Pure hardcore gameplay.",
-                download: "Download on Google Play",
-                features_btn: "View Features",
-                features_title: "FEATURES",
-                f1_title: "🔫 Movement by Recoil",
-                f1_desc: "Shoot to jump, shoot to survive. Every bullet directly affects your position.",
-                f2_title: "⚡ Hardcore Gameplay",
-                f2_desc: "No mercy. One wrong move and you fall back to the bottom.",
-                f3_title: "🗺️ Vertical Level Design",
-                f3_desc: "Jump King–style vertical maps that create constant pressure.",
-                f4_title: "🎮 Minimal Controls",
-                f4_desc: "Easy to learn, hard to master. Everything is about timing and angle.",
-                media_title: "IMAGES & VIDEO",
-                media_shot1: "Screenshot 1",
-                media_shot2: "Screenshot 2",
-                media_video: "Gameplay Video",
-                legal_title: "LEGAL",
-                privacy_title: "Privacy Policy",
-                privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Collected Data:</b><br>- Device information (model, OS, Advertising ID)<br>- Gameplay data (progress, behavior, settings)<br>- Data from Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Usage:</b><br>- Performance optimization<br>- Ads display<br>- Save game progress<br><br><b>User Rights:</b><br>- Delete saved data<br>- View stored data<br><br>Policy may be updated in future releases.",
-                tos_title: "Terms of Service",
-                tos_content: "By playing Recoil Jumper, you agree that:<br><br>- All assets and content belong to Namo<br>- No hacking, cheating, or exploiting bugs<br>- The game displays ads via Google AdMob<br>- We are not responsible for data loss caused by device or network issues"
-            }
-        };
+        <div class="feature-video">
+            <video src="screenshots/gameplay.mp4" controls muted playsinline preload="metadata"></video>
+        </div>
 
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
+        <div class="media">
+            
+            <div class="media-item"><img src="screenshots/screen1.png" alt="Recoil Jumper screenshot 1"></div>
+            <div class="media-item"><img src="screenshots/screen2.png" alt="Recoil Jumper screenshot 2"></div>
+            <div class="media-item"><img src="screenshots/screen3.png" alt="Recoil Jumper screenshot 3"></div>
+            <div class="media-item"><img src="screenshots/screen4.png" alt="Recoil Jumper screenshot 4"></div>
+            <div class="media-item"><img src="screenshots/screen5.png" alt="Recoil Jumper screenshot 5"></div>
+            <div class="media-item"><img src="screenshots/screen6.png" alt="Recoil Jumper screenshot 6"></div>
+            <div class="media-item"><img src="screenshots/screen7.png" alt="Recoil Jumper screenshot 7"></div>
+        </div>
+            
+            
+        </div>
+    </div>
+</section>
 
-            document.querySelectorAll('.lang-switch button').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
-            });
+<section id="legal">
+    <div class="container">
+        <h2 class="section-title" data-i18n="legal_title">CHÍNH SÁCH & ĐIỀU KHOẢN</h2>
 
-            localStorage.setItem('lang', lang);
+        <div class="feature">
+            <h3 data-i18n="privacy_title">Privacy Policy</h3>
+            <p data-i18n="privacy_content"></p>
+        </div>
+
+        <div class="feature" style="margin-top:30px;">
+            <h3 data-i18n="tos_title">Terms of Service</h3>
+            <p data-i18n="tos_content"></p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <span>Recoil Jumper</span>. All rights reserved.</p>
+</footer>
+
+<script>
+const translations = {
+    vi: {
+        title: "RECOIL JUMPER",
+        subtitle: "Một game platformer hành động nơi <b>lực giật của vũ khí</b> chính là cách bạn di chuyển. Nhảy – bắn – chết – thử lại. Hardcore đúng nghĩa.",
+        download: "Tải Game trên Google Play",
+        features_btn: "Xem Tính Năng",
+        features_title: "TÍNH NĂNG",
+        f1_title: "🔫 Di chuyển bằng Recoil",
+        f1_desc: "Bắn để nhảy, bắn để sống sót. Mọi phát bắn đều ảnh hưởng trực tiếp tới vị trí nhân vật.",
+        f2_title: "⚡ Gameplay Hardcore",
+        f2_desc: "Không khoan nhượng. Sai một nhịp là rơi xuống đáy bản đồ.",
+        f3_title: "🗺️ Map dọc phức tạp",
+        f3_desc: "Thiết kế map kiểu Jump King – leo cao, rơi sâu, đầy áp lực.",
+        f4_title: "🎮 Điều khiển tối giản",
+        f4_desc: "Dễ chơi, khó giỏi. Mọi thứ xoay quanh timing và góc bắn.",
+        media_title: "HÌNH ẢNH & VIDEO",
+        media_shot1: "Ảnh chụp màn hình 1",
+        media_shot2: "Ảnh chụp màn hình 2",
+        media_video: "Video gameplay",
+        legal_title: "CHÍNH SÁCH & ĐIỀU KHOẢN",
+        privacy_title: "Chính sách quyền riêng tư",
+        privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Thông tin thu thập:</b><br>- Thông tin thiết bị (model, OS, Advertising ID)<br>- Dữ liệu chơi game (hành vi, tiến trình, cài đặt)<br>- Dữ liệu từ Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Mục đích sử dụng:</b><br>- Tối ưu hiệu năng<br>- Hiển thị quảng cáo<br>- Lưu tiến trình chơi<br><br><b>Quyền người dùng:</b><br>- Xóa dữ liệu chơi game<br>- Xem dữ liệu đã lưu<br><br>Chính sách có thể thay đổi theo các bản cập nhật.",
+        tos_title: "Điều khoản dịch vụ",
+        tos_content: "Khi chơi Recoil Jumper, bạn đồng ý với các điều khoản sau:<br><br>- Mọi tài sản và nội dung thuộc quyền sở hữu của Namo<br>- Không hack, cheat hoặc khai thác lỗi<br>- Game có hiển thị quảng cáo qua Google AdMob<br>- Chúng tôi không chịu trách nhiệm cho mất dữ liệu do thiết bị hoặc mạng không ổn định"
+    },
+    en: {
+        title: "RECOIL JUMPER",
+        subtitle: "An action platformer where <b>weapon recoil</b> is how you move. Shoot – jump – die – retry. Pure hardcore gameplay.",
+        download: "Download on Google Play",
+        features_btn: "View Features",
+        features_title: "FEATURES",
+        f1_title: "🔫 Movement by Recoil",
+        f1_desc: "Shoot to jump, shoot to survive. Every bullet directly affects your position.",
+        f2_title: "⚡ Hardcore Gameplay",
+        f2_desc: "No mercy. One wrong move and you fall back to the bottom.",
+        f3_title: "🗺️ Vertical Level Design",
+        f3_desc: "Jump King–style vertical maps that create constant pressure.",
+        f4_title: "🎮 Minimal Controls",
+        f4_desc: "Easy to learn, hard to master. Everything is about timing and angle.",
+        media_title: "IMAGES & VIDEO",
+        media_shot1: "Screenshot 1",
+        media_shot2: "Screenshot 2",
+        media_video: "Gameplay Video",
+        legal_title: "LEGAL",
+        privacy_title: "Privacy Policy",
+        privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Collected Data:</b><br>- Device information (model, OS, Advertising ID)<br>- Gameplay data (progress, behavior, settings)<br>- Data from Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Usage:</b><br>- Performance optimization<br>- Ads display<br>- Save game progress<br><br><b>User Rights:</b><br>- Delete saved data<br>- View stored data<br><br>Policy may be updated in future releases.",
+        tos_title: "Terms of Service",
+        tos_content: "By playing Recoil Jumper, you agree that:<br><br>- All assets and content belong to Namo<br>- No hacking, cheating, or exploiting bugs<br>- The game displays ads via Google AdMob<br>- We are not responsible for data loss caused by device or network issues"
+    }
+};
+
+function setLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
         }
+    });
 
-        const savedLang = localStorage.getItem('lang') || 'vi';
-        setLanguage(savedLang);
+    document.querySelectorAll('.lang-switch button').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
 
-        document.querySelectorAll('.lang-switch button').forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
-        });
-        // ===== DRAG TO SCROLL (DESKTOP LIKE GOOGLE PLAY) =====
-        const media = document.querySelector('.media');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+    localStorage.setItem('lang', lang);
+}
 
-        if (media) {
-            media.addEventListener('mousedown', (e) => {
-                isDown = true;
-                media.classList.add('dragging');
-                startX = e.pageX - media.offsetLeft;
-                scrollLeft = media.scrollLeft;
-            });
+const savedLang = localStorage.getItem('lang') || 'vi';
+setLanguage(savedLang);
 
-            media.addEventListener('mouseleave', () => {
-                isDown = false;
-                media.classList.remove('dragging');
-            });
+document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+// ===== DRAG TO SCROLL (DESKTOP LIKE GOOGLE PLAY) =====
+const media = document.querySelector('.media');
+let isDown = false;
+let startX;
+let scrollLeft;
 
-            media.addEventListener('mouseup', () => {
-                isDown = false;
-                media.classList.remove('dragging');
-            });
+if (media) {
+    media.addEventListener('mousedown', (e) => {
+        isDown = true;
+        media.classList.add('dragging');
+        startX = e.pageX - media.offsetLeft;
+        scrollLeft = media.scrollLeft;
+    });
 
-            media.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - media.offsetLeft;
-                const walk = (x - startX) * 1.5; // tốc độ kéo
-                media.scrollLeft = scrollLeft - walk;
-            });
-        }
-    </script>
+    media.addEventListener('mouseleave', () => {
+        isDown = false;
+        media.classList.remove('dragging');
+    });
+
+    media.addEventListener('mouseup', () => {
+        isDown = false;
+        media.classList.remove('dragging');
+    });
+
+    media.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - media.offsetLeft;
+        const walk = (x - startX) * 1.5; // tốc độ kéo
+        media.scrollLeft = scrollLeft - walk;
+    });
+}
+</script>
 </body>
 </html>
