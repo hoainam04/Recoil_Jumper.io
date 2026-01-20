@@ -125,6 +125,24 @@
         .feature h3 { margin-bottom: 12px; color: var(--secondary); }
         .feature p { color: var(--muted); font-size: 15px; }
 
+        .media {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .media img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: #000;
+        }
+
+        .media img:hover {
+            transform: scale(1.03);
+            transition: 0.25s ease;
+        }
+
         footer {
             background: #0b0d12;
             padding: 40px 20px;
@@ -182,9 +200,32 @@
     <div class="container">
         <h2 class="section-title" data-i18n="media_title">HÌNH ẢNH & VIDEO</h2>
         <div class="media">
-            <div class="placeholder" data-i18n="media_shot1">Screenshot 1</div>
+            <img src="screenshots/screen1.png" alt="Recoil Jumper gameplay screenshot 1">
+            <img src="screenshots/screen2.png" alt="Recoil Jumper gameplay screenshot 2">
+            <img src="screenshots/screen3.png" alt="Recoil Jumper gameplay screenshot 3">
+            <img src="screenshots/screen4.png" alt="Recoil Jumper gameplay screenshot 4">
+            <img src="screenshots/screen5.png" alt="Recoil Jumper gameplay screenshot 5">
+            <img src="screenshots/screen6.png" alt="Recoil Jumper gameplay screenshot 6">
+            <img src="screenshots/screen7.png" alt="Recoil Jumper gameplay screenshot 7">
+        </div>
             <div class="placeholder" data-i18n="media_shot2">Screenshot 2</div>
             <div class="placeholder" data-i18n="media_video">Gameplay Video</div>
+        </div>
+    </div>
+</section>
+
+<section id="legal">
+    <div class="container">
+        <h2 class="section-title" data-i18n="legal_title">CHÍNH SÁCH & ĐIỀU KHOẢN</h2>
+
+        <div class="feature">
+            <h3 data-i18n="privacy_title">Privacy Policy</h3>
+            <p data-i18n="privacy_content"></p>
+        </div>
+
+        <div class="feature" style="margin-top:30px;">
+            <h3 data-i18n="tos_title">Terms of Service</h3>
+            <p data-i18n="tos_content"></p>
         </div>
     </div>
 </section>
@@ -212,7 +253,12 @@ const translations = {
         media_title: "HÌNH ẢNH & VIDEO",
         media_shot1: "Ảnh chụp màn hình 1",
         media_shot2: "Ảnh chụp màn hình 2",
-        media_video: "Video gameplay"
+        media_video: "Video gameplay",
+        legal_title: "CHÍNH SÁCH & ĐIỀU KHOẢN",
+        privacy_title: "Chính sách quyền riêng tư",
+        privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Thông tin thu thập:</b><br>- Thông tin thiết bị (model, OS, Advertising ID)<br>- Dữ liệu chơi game (hành vi, tiến trình, cài đặt)<br>- Dữ liệu từ Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Mục đích sử dụng:</b><br>- Tối ưu hiệu năng<br>- Hiển thị quảng cáo<br>- Lưu tiến trình chơi<br><br><b>Quyền người dùng:</b><br>- Xóa dữ liệu chơi game<br>- Xem dữ liệu đã lưu<br><br>Chính sách có thể thay đổi theo các bản cập nhật.",
+        tos_title: "Điều khoản dịch vụ",
+        tos_content: "Khi chơi Recoil Jumper, bạn đồng ý với các điều khoản sau:<br><br>- Mọi tài sản và nội dung thuộc quyền sở hữu của Namo<br>- Không hack, cheat hoặc khai thác lỗi<br>- Game có hiển thị quảng cáo qua Google AdMob<br>- Chúng tôi không chịu trách nhiệm cho mất dữ liệu do thiết bị hoặc mạng không ổn định"
     },
     en: {
         title: "RECOIL JUMPER",
@@ -231,7 +277,12 @@ const translations = {
         media_title: "IMAGES & VIDEO",
         media_shot1: "Screenshot 1",
         media_shot2: "Screenshot 2",
-        media_video: "Gameplay Video"
+        media_video: "Gameplay Video",
+        legal_title: "LEGAL",
+        privacy_title: "Privacy Policy",
+        privacy_content: "<b>Game:</b> Recoil Jumper<br><b>Developer:</b> Namo<br><b>Email:</b> jumper04k@gmail.com<br><br><b>Collected Data:</b><br>- Device information (model, OS, Advertising ID)<br>- Gameplay data (progress, behavior, settings)<br>- Data from Google AdMob, Google Play Services, Firebase Analytics, Unity<br><br><b>Usage:</b><br>- Performance optimization<br>- Ads display<br>- Save game progress<br><br><b>User Rights:</b><br>- Delete saved data<br>- View stored data<br><br>Policy may be updated in future releases.",
+        tos_title: "Terms of Service",
+        tos_content: "By playing Recoil Jumper, you agree that:<br><br>- All assets and content belong to Namo<br>- No hacking, cheating, or exploiting bugs<br>- The game displays ads via Google AdMob<br>- We are not responsible for data loss caused by device or network issues"
     }
 };
 
