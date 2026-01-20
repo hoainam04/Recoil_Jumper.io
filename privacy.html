@@ -4,73 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy - Recoil Jumper</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
+:root {
+    --bg:#0f1115;
+    --panel:#181b22;
+    --primary:#ff3b3b;
+    --secondary:#4dd0ff;
+    --text:#eaeaf0;
+    --muted:#9aa0b3;
+}
 body {
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #eaeaf0;
-    padding: 40px 20px;
-    line-height: 1.7;
+    margin:0;
+    font-family:Montserrat,sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 .container {
-    max-width: 900px;
-    margin: auto;
+    max-width:900px;
+    margin:auto;
+    padding:60px 20px;
 }
-h1, h2 {
-    color: #ff3b3b;
+.card {
+    background:var(--panel);
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
-a { color: #4dd0ff; }
+h1 { color:var(--primary); margin-bottom:10px; }
+h2 { color:var(--secondary); margin-top:30px; }
+p,li { color:var(--muted); line-height:1.7; }
+a { color:var(--secondary); text-decoration:none; }
+.lang-switch {
+    position:fixed;
+    top:16px;
+    right:16px;
+}
+.lang-switch button {
+    background:none;
+    border:1px solid var(--secondary);
+    color:var(--secondary);
+    padding:6px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.lang-switch button.active {
+    background:var(--secondary);
+    color:#000;
+}
 </style>
 </head>
+
 <body>
+<div class="lang-switch">
+    <button data-lang="vi">VI</button>
+    <button data-lang="en" class="active">EN</button>
+</div>
+
 <div class="container">
-<h1>Privacy Policy</h1>
+<div class="card">
+<h1 data-i18n="title">Privacy Policy</h1>
 
-<p><b>Game Name:</b> Recoil Jumper</p>
-<p><b>Developer:</b> Namo</p>
-<p><b>Contact Email:</b> jumper04k@gmail.com</p>
+<p data-i18n="intro"></p>
 
-<h2>1. Information We Collect</h2>
-<ul>
-<li>Device information (model, OS, Advertising ID)</li>
-<li>In-game usage data (gameplay behavior, progress, settings)</li>
-<li>Data collected by third-party services:
-    <ul>
-        <li>Google AdMob</li>
-        <li>Google Play Services</li>
-        <li>Firebase Analytics</li>
-        <li>Unity</li>
-    </ul>
-</li>
-</ul>
-<p>No account or login is used.</p>
+<h2 data-i18n="c1">1. Information We Collect</h2>
+<ul data-i18n="c1_list"></ul>
 
-<h2>2. How We Use Data</h2>
-<ul>
-<li>Optimize game performance</li>
-<li>Display relevant ads</li>
-<li>Save player progress</li>
-</ul>
+<h2 data-i18n="c2">2. How We Use Data</h2>
+<ul data-i18n="c2_list"></ul>
 
-<h2>3. Permissions</h2>
-<ul>
-<li>Storage access – save/load progress</li>
-<li>Internet access – ads & connectivity</li>
-</ul>
+<h2 data-i18n="c3">3. Permissions</h2>
+<ul data-i18n="c3_list"></ul>
 
-<h2>4. Data Security</h2>
-<p>No selling or sharing of data with unrelated parties. Secure methods are used.</p>
+<h2 data-i18n="c4">4. Data Security</h2>
+<p data-i18n="c4_text"></p>
 
-<h2>5. User Rights</h2>
-<ul>
-<li>Delete saved game data</li>
-<li>View stored data</li>
-</ul>
+<h2 data-i18n="c5">5. User Rights</h2>
+<ul data-i18n="c5_list"></ul>
 
-<h2>6. Policy Changes</h2>
-<p>This policy may be updated through app updates.</p>
+<h2 data-i18n="c6">6. Policy Changes</h2>
+<p data-i18n="c6_text"></p>
 
 <p><a href="index.html">← Back to Home</a></p>
 </div>
+</div>
+
+<script>
+const t={
+en:{
+title:"Privacy Policy",
+intro:"Game: Recoil Jumper<br>Developer: Namo<br>Email: jumper04k@gmail.com",
+c1:"1. Information We Collect",
+c1_list:"<li>Device information (model, OS, Advertising ID)</li><li>Gameplay data</li><li>Google AdMob, Google Play Services, Firebase Analytics, Unity</li>",
+c2:"2. How We Use Data",
+c2_list:"<li>Optimize performance</li><li>Display ads</li><li>Save progress</li>",
+c3:"3. Permissions",
+c3_list:"<li>Storage – save/load progress</li><li>Internet – ads & connectivity</li>",
+c4:"4. Data Security",
+c4_text:"We do not sell or share data with unrelated parties.",
+c5:"5. User Rights",
+c5_list:"<li>Delete saved data</li><li>View stored data</li>",
+c6:"6. Policy Changes",
+c6_text:"This policy may change through app updates."
+},
+vi:{
+title:"Chính sách quyền riêng tư",
+intro:"Game: Recoil Jumper<br>Nhà phát triển: Namo<br>Email: jumper04k@gmail.com",
+c1:"1. Thông tin thu thập",
+c1_list:"<li>Thông tin thiết bị</li><li>Dữ liệu chơi game</li><li>Google AdMob, Google Play Services, Firebase, Unity</li>",
+c2:"2. Mục đích sử dụng",
+c2_list:"<li>Tối ưu hiệu năng</li><li>Hiển thị quảng cáo</li><li>Lưu tiến trình</li>",
+c3:"3. Quyền truy cập",
+c3_list:"<li>Bộ nhớ</li><li>Kết nối Internet</li>",
+c4:"4. Bảo mật dữ liệu",
+c4_text:"Chúng tôi không bán hoặc chia sẻ dữ liệu trái phép.",
+c5:"5. Quyền người dùng",
+c5_list:"<li>Xóa dữ liệu</li><li>Xem dữ liệu đã lưu</li>",
+c6:"6. Thay đổi chính sách",
+c6_text:"Chính sách có thể thay đổi theo bản cập nhật."
+}
+};
+
+function setLang(l){
+document.querySelectorAll("[data-i18n]").forEach(e=>{
+e.innerHTML=t[l][e.dataset.i18n];
+});
+document.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
+}
+document.querySelectorAll("button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang("en");
+</script>
 </body>
 </html>
