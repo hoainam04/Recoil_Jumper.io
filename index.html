@@ -175,6 +175,7 @@
 <a href="privacy.html">Privacy Policy</a> ·
 <a href="terms.html">Terms of Service</a>
 </p>
+<p data-i18n="contact"></p>
 <p>© 2026 Recoil Jumper</p>
 </footer>
 
@@ -188,9 +189,10 @@ features_btn:"Xem tính năng",
 features_title:"TÍNH NĂNG",
 f1_title:"🔫 Di chuyển bằng Recoil",f1_desc:"Bắn để nhảy, bắn để sống sót.",
 f2_title:"⚡ Hardcore",f2_desc:"Sai một nhịp là rơi xuống đáy.",
-f3_title:"🗺️ Bản đồ leo dọc đầy thử thách",f3_desc:"nơi mỗi sai lầm đều phải trả giá.",
+f3_title:"🗺️ Bản đồ leo dọc đầy thử thách",f3_desc:"Nơi mỗi sai lầm đều phải trả giá.",
 f4_title:"🎮 Điều khiển đơn giản",f4_desc:"Dễ chơi, khó giỏi.",
-media_title:"HÌNH ẢNH & VIDEO"
+media_title:"HÌNH ẢNH & VIDEO",
+contact:'Liên hệ: <a href="mailto:jumper04k@gmail.com">jumper04k@gmail.com</a>'
 },
 en:{
 title:"RECOIL JUMPER",
@@ -200,11 +202,13 @@ features_btn:"View Features",
 features_title:"FEATURES",
 f1_title:"🔫 Recoil Movement",f1_desc:"Shoot to jump.",
 f2_title:"⚡ Hardcore",f2_desc:"One mistake, you fall.",
-f3_title:"🗺️ Vertical Maps",f3_desc:"Challenging vertical maps where every mistake has consequences",
+f3_title:"🗺️ Vertical Maps",f3_desc:"Challenging vertical maps where every mistake has consequences.",
 f4_title:"🎮 Simple Controls",f4_desc:"Easy to learn, hard to master.",
-media_title:"IMAGES & VIDEO"
+media_title:"IMAGES & VIDEO",
+contact:'Contact us: <a href="mailto:jumper04k@gmail.com">jumper04k@gmail.com</a>'
 }
 };
+
 function setLang(l){
 document.querySelectorAll("[data-i18n]").forEach(e=>e.innerHTML=t[l][e.dataset.i18n]);
 document.querySelectorAll(".lang-switch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
