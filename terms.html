@@ -4,50 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service - Recoil Jumper</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0f1115;
-    color: #eaeaf0;
-    padding: 40px 20px;
-    line-height: 1.7;
-}
-.container {
-    max-width: 900px;
-    margin: auto;
-}
-h1, h2 {
-    color: #ff3b3b;
-}
-a { color: #4dd0ff; }
+body{margin:0;font-family:Montserrat,sans-serif;background:#0f1115;color:#eaeaf0}
+.container{max-width:900px;margin:auto;padding:60px 20px}
+.card{background:#181b22;padding:40px;border-radius:20px}
+h1{color:#ff3b3b}
+h2{color:#4dd0ff}
+p,li{color:#9aa0b3}
+a{color:#4dd0ff}
+.lang-switch{position:fixed;top:16px;right:16px}
+button{border:1px solid #4dd0ff;background:none;color:#4dd0ff;padding:6px 12px;border-radius:8px}
+button.active{background:#4dd0ff;color:#000}
 </style>
 </head>
+
 <body>
+<div class="lang-switch">
+<button data-lang="vi">VI</button>
+<button data-lang="en" class="active">EN</button>
+</div>
+
 <div class="container">
-<h1>Terms of Service</h1>
+<div class="card">
+<h1 data-i18n="title">Terms of Service</h1>
 
-<h2>1. Acceptance of Terms</h2>
-<p>By playing Recoil Jumper, you agree to these Terms.</p>
+<h2 data-i18n="t1">1. Acceptance</h2>
+<p data-i18n="t1_text"></p>
 
-<h2>2. Ownership</h2>
-<p>All assets and content are owned by Namo.</p>
+<h2 data-i18n="t2">2. Ownership</h2>
+<p data-i18n="t2_text"></p>
 
-<h2>3. User Conduct</h2>
-<ul>
-<li>No hacking or cheating</li>
-<li>No exploiting bugs</li>
-</ul>
+<h2 data-i18n="t3">3. User Conduct</h2>
+<ul data-i18n="t3_list"></ul>
 
-<h2>4. Advertising</h2>
-<p>The game displays ads via Google AdMob.</p>
+<h2 data-i18n="t4">4. Advertising</h2>
+<p data-i18n="t4_text"></p>
 
-<h2>5. Disclaimer</h2>
-<p>We are not responsible for data loss caused by device or network issues.</p>
-
-<h2>6. Service Changes</h2>
-<p>The game may be modified or updated at any time.</p>
+<h2 data-i18n="t5">5. Disclaimer</h2>
+<p data-i18n="t5_text"></p>
 
 <p><a href="index.html">← Back to Home</a></p>
 </div>
+</div>
+
+<script>
+const t={
+en:{
+title:"Terms of Service",
+t1:"1. Acceptance",
+t1_text:"By playing Recoil Jumper, you agree to these terms.",
+t2:"2. Ownership",
+t2_text:"All content belongs to Namo.",
+t3:"3. User Conduct",
+t3_list:"<li>No hacking</li><li>No cheating</li>",
+t4:"4. Advertising",
+t4_text:"The game displays ads via Google AdMob.",
+t5:"5. Disclaimer",
+t5_text:"We are not responsible for data loss."
+},
+vi:{
+title:"Điều khoản dịch vụ",
+t1:"1. Chấp nhận điều khoản",
+t1_text:"Khi chơi Recoil Jumper, bạn đồng ý các điều khoản này.",
+t2:"2. Quyền sở hữu",
+t2_text:"Mọi nội dung thuộc về Namo.",
+t3:"3. Hành vi người dùng",
+t3_list:"<li>Không hack</li><li>Không cheat</li>",
+t4:"4. Quảng cáo",
+t4_text:"Game hiển thị quảng cáo qua Google AdMob.",
+t5:"5. Miễn trừ trách nhiệm",
+t5_text:"Chúng tôi không chịu trách nhiệm mất dữ liệu."
+}
+};
+
+function setLang(l){
+document.querySelectorAll("[data-i18n]").forEach(e=>{
+e.innerHTML=t[l][e.dataset.i18n];
+});
+document.querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
+}
+document.querySelectorAll("button").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+setLang("en");
+</script>
 </body>
 </html>
