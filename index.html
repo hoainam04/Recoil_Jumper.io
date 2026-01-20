@@ -126,9 +126,23 @@
         .feature p { color: var(--muted); font-size: 15px; }
 
         .media {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;
+        }
+
+        .media::-webkit-scrollbar { height: 8px; }
+        .media::-webkit-scrollbar-thumb {
+            background: var(--panel);
+            border-radius: 4px;
+        }
+
+        .media-item {
+            flex: 0 0 260px;
+            scroll-snap-align: center;
         }
 
         .media img {
@@ -136,11 +150,6 @@
             border-radius: 14px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             background: #000;
-        }
-
-        .media img:hover {
-            transform: scale(1.03);
-            transition: 0.25s ease;
         }
 
         footer {
@@ -200,13 +209,13 @@
     <div class="container">
         <h2 class="section-title" data-i18n="media_title">HÌNH ẢNH & VIDEO</h2>
         <div class="media">
-            <img src="screenshots/screen1.png" alt="Recoil Jumper gameplay screenshot 1">
-            <img src="screenshots/screen2.png" alt="Recoil Jumper gameplay screenshot 2">
-            <img src="screenshots/screen3.png" alt="Recoil Jumper gameplay screenshot 3">
-            <img src="screenshots/screen4.png" alt="Recoil Jumper gameplay screenshot 4">
-            <img src="screenshots/screen5.png" alt="Recoil Jumper gameplay screenshot 5">
-            <img src="screenshots/screen6.png" alt="Recoil Jumper gameplay screenshot 6">
-            <img src="screenshots/screen7.png" alt="Recoil Jumper gameplay screenshot 7">
+            <div class="media-item"><img src="screenshots/screen1.png" alt="Recoil Jumper screenshot 1"></div>
+            <div class="media-item"><img src="screenshots/screen2.png" alt="Recoil Jumper screenshot 2"></div>
+            <div class="media-item"><img src="screenshots/screen3.png" alt="Recoil Jumper screenshot 3"></div>
+            <div class="media-item"><img src="screenshots/screen4.png" alt="Recoil Jumper screenshot 4"></div>
+            <div class="media-item"><img src="screenshots/screen5.png" alt="Recoil Jumper screenshot 5"></div>
+            <div class="media-item"><img src="screenshots/screen6.png" alt="Recoil Jumper screenshot 6"></div>
+            <div class="media-item"><img src="screenshots/screen7.png" alt="Recoil Jumper screenshot 7"></div>
         </div>
             <div class="placeholder" data-i18n="media_shot2">Screenshot 2</div>
             <div class="placeholder" data-i18n="media_video">Gameplay Video</div>
